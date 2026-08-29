@@ -11,7 +11,7 @@ This is an ESPHome touch e-paper thermostat based on the following hardare:
 - [XIAO ESP32C6](https://wiki.seeedstudio.com/xiao_esp32c6_getting_started/)
 - [Waveshare 2.9in E-Paper Touch HAT](https://www.waveshare.com/2.9inch-Touch-e-Paper-HAT.htm)
 - [Pololu U1V11F5 5V regulator](https://www.pololu.com/product/2562)
-- Any 1S LiPo battery
+- 240 mAh 1S LiPo battery
 
 Depends on:
 
@@ -19,7 +19,7 @@ Depends on:
 
 Still in progress:
 
-- Improve battery life (currently only ~5 hours with a 280 mAh battery)
+- Improve battery life (currently only ~5 hours)
 - Add a temperature sensor (currently this is more of a remote control than a thermostat, strictly speaking)
 
 The challenge with battery life is the touch sensor and wifi. While the E-Paper display and ESP32 can theoretically go into a deep sleep and consume only a few microamps, this presents two problems:
