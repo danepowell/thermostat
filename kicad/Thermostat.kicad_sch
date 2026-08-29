@@ -3866,7 +3866,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Seeed_Studio_XIAO_Series:XIAO-ESP32-C6-SMD"
+		(property "Footprint" "Seeed Studio:XIAO-ESP32-C6-DIP"
 			(at 86.36 68.58 0)
 			(hide yes)
 			(show_name no)
