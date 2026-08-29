@@ -19,7 +19,6 @@ Depends on:
 
 Still in progress:
 
-- Add a 3d-printed case
 - Improve battery life (currently only ~5 hours with a 280 mAh battery)
 - Add a temperature sensor (currently this is more of a remote control than a thermostat, strictly speaking)
 

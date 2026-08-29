@@ -9,3 +9,8 @@ SPDX-License-Identifier = "CERN-OHL-S-2.0"
 path = "esphome/**"
 SPDX-FileCopyrightText = "2026 Dane Powell"
 SPDX-License-Identifier = "GPL-3.0-or-later"
+
+[[annotations]]
+path = "case/*"
+SPDX-FileCopyrightText = "2026 Dane Powell"
+SPDX-License-Identifier = "CERN-OHL-S-2.0"
