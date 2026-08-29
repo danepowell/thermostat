@@ -14,14 +14,14 @@
 		(2 "B.Cu" signal "Back")
 		(13 "F.Paste" user)
 		(15 "B.Paste" user)
-		(5 "F.SilkS" user)
-		(7 "B.SilkS" user)
+		(5 "F.SilkS" user "F.Silkscreen")
+		(7 "B.SilkS" user "B.Silkscreen")
 		(1 "F.Mask" user)
 		(3 "B.Mask" user)
 		(25 "Edge.Cuts" user)
 		(27 "Margin" user)
-		(31 "F.CrtYd" user)
-		(29 "B.CrtYd" user)
+		(31 "F.CrtYd" user "F.Courtyard")
+		(29 "B.CrtYd" user "B.Courtyard")
 		(35 "F.Fab" user)
 	)
 	(setup
@@ -103,7 +103,6 @@
 		)
 		(capping no)
 		(filling no)
-		(zone_defaults)
 		(pcbplotparams
 			(layerselection 0x00000000_00000000_55555555_5755f5ff)
 			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
@@ -144,7 +143,7 @@
 	(footprint "Seeed_Studio_XIAO_Series:XIAO-ESP32-C6-SMD"
 		(layer "F.Cu")
 		(uuid "26482701-d6e5-411a-86bc-549dd589716f")
-		(at 144.2566 126.8585 180)
+		(at 102.835 127.92 180)
 		(property "Reference" "U3"
 			(at 7.112 -21.336 0)
 			(layer "F.SilkS")
@@ -158,7 +157,7 @@
 			)
 		)
 		(property "Value" "XIAO-ESP32-C6-SMD"
-			(at 8.89 -10.795 0)
+			(at 8.6566 -8.7415 0)
 			(layer "F.Fab")
 			(uuid "21814990-425a-44fa-acb1-336eba10829b")
 			(effects
@@ -664,7 +663,7 @@
 	(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 		(layer "F.Cu")
 		(uuid "3dcd3a96-3859-452f-ac46-45477be09a57")
-		(at 146.5 113.5 180)
+		(at 79.22 124.1 180)
 		(descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=7.62mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 7.62mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
 		(property "Reference" "R2"
@@ -884,7 +883,7 @@
 	(footprint "Connector_PinHeader_2.54mm:PinHeader_2x20_P2.54mm_Vertical"
 		(layer "F.Cu")
 		(uuid "53ccf109-92ef-42fd-a9b6-c53fb28eb642")
-		(at 94.78 108.8 90)
+		(at 94.68 111.74 90)
 		(descr "Through hole straight pin header, 2x20, 2.54mm pitch, double rows")
 		(tags "Through hole pin header THT 2x20 2.54mm double row")
 		(property "Reference" "J1"
@@ -1566,7 +1565,7 @@
 	(footprint "PCM_Pololu:U1V11F5"
 		(layer "F.Cu")
 		(uuid "7a3916c5-97c6-4b4d-8b19-acfeb28c26af")
-		(at 79.35 110.63)
+		(at 83.8 111)
 		(property "Reference" "U1"
 			(at 0 -0.5 0)
 			(unlocked yes)
@@ -1813,7 +1812,7 @@
 			)
 			(polygon
 				(pts
-					(xy 71.73 104.915) (xy 86.97 104.915) (xy 86.97 116.345) (xy 71.73 116.345)
+					(xy 76.18 105.285) (xy 91.42 105.285) (xy 91.42 116.715) (xy 76.18 116.715)
 				)
 			)
 		)
@@ -1833,7 +1832,7 @@
 	(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 		(layer "F.Cu")
 		(uuid "b4c6155b-ca61-4bb5-bd79-3bc6757c1baf")
-		(at 146.5 118.5 180)
+		(at 76.81 133.5 180)
 		(descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=7.62mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 7.62mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
 		(property "Reference" "R1"
@@ -2051,8 +2050,8 @@
 		)
 	)
 	(gr_line
-		(start 69 103)
-		(end 69 149)
+		(start 69 104)
+		(end 69 148)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -2060,9 +2059,31 @@
 		(layer "Edge.Cuts")
 		(uuid "713962e1-4888-4b46-811e-33989cb951d5")
 	)
+	(gr_arc
+		(start 69 104)
+		(mid 69.292893 103.292893)
+		(end 70 103)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "db2adce2-2517-43d4-97e6-96f6fecc515d")
+	)
+	(gr_arc
+		(start 70 149)
+		(mid 69.292893 148.707107)
+		(end 69 148)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "d92cfc5f-3ea3-4313-bfc5-126d37ecd8b7")
+	)
 	(gr_line
-		(start 69 149)
-		(end 151 149)
+		(start 70 149)
+		(end 150 149)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -2071,8 +2092,8 @@
 		(uuid "d0d3a397-6ec8-437c-b7de-c031d35c5c05")
 	)
 	(gr_line
-		(start 151 103)
-		(end 69 103)
+		(start 150 103)
+		(end 70 103)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -2080,9 +2101,31 @@
 		(layer "Edge.Cuts")
 		(uuid "c5a1bc6b-8a20-4ead-8694-4f95f5f177ab")
 	)
+	(gr_arc
+		(start 150 103)
+		(mid 150.707107 103.292893)
+		(end 151 104)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "187befcc-ee7e-419b-8b05-ee463fcddd40")
+	)
+	(gr_arc
+		(start 151 148)
+		(mid 150.707107 148.707107)
+		(end 150 149)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "486c2203-0fcd-402e-9e55-bd9cc7696ab2")
+	)
 	(gr_line
-		(start 151 149)
-		(end 151 103)
+		(start 151 148)
+		(end 151 104)
 		(stroke
 			(width 0.05)
 			(type default)
