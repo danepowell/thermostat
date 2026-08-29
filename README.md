@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2026 Dane Powell
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
 # ESPHome E-Paper Thermostat
 
 This is an ESPHome touch e-paper thermostat based on the following hardare:
