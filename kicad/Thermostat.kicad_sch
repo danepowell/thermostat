@@ -5,6 +5,164 @@
 	(uuid "7c7073d9-aa71-4fa3-824c-b9d11f714908")
 	(paper "A4")
 	(lib_symbols
+		(symbol "Connector_Generic:Conn_01x02"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x02"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x02_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector_Generic:Conn_02x20_Odd_Even"
 			(pin_names
 				(offset 1.016)
@@ -2579,6 +2737,18 @@
 		(color 0 0 0 0)
 		(uuid "43610cf4-cfd5-4147-a2ff-9b3c70479fa8")
 	)
+	(junction
+		(at 97.79 113.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "93e8e1cc-2604-4606-8d17-e582a3e115a2")
+	)
+	(junction
+		(at 92.71 113.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "dc375cfe-1485-4b65-88d5-be175bdd4262")
+	)
 	(no_connect
 		(at 137.16 106.68)
 		(uuid "0122c351-d34e-48d3-8adf-a3fdbce04a96")
@@ -2733,6 +2903,16 @@
 	)
 	(wire
 		(pts
+			(xy 97.79 101.6) (xy 97.79 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "02f6daf9-0d5c-4a56-a704-b81729a4c29e")
+	)
+	(wire
+		(pts
 			(xy 88.9 101.6) (xy 97.79 101.6)
 		)
 		(stroke
@@ -2773,7 +2953,7 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 96.52) (xy 92.71 102.87)
+			(xy 92.71 96.52) (xy 92.71 113.03)
 		)
 		(stroke
 			(width 0)
@@ -2813,13 +2993,13 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 101.6) (xy 97.79 102.87)
+			(xy 96.52 113.03) (xy 97.79 113.03)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6fc66fcb-a444-41e9-9fbe-249468c028b3")
+		(uuid "9a286763-f2e6-4955-9111-e16c1cd7cd3d")
 	)
 	(wire
 		(pts
@@ -2830,6 +3010,16 @@
 			(type default)
 		)
 		(uuid "a8ff729a-a459-4f27-9aa3-0a325fb90da8")
+	)
+	(wire
+		(pts
+			(xy 93.98 113.03) (xy 92.71 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b216c717-c83e-48ed-8ac4-f9a109454e89")
 	)
 	(wire
 		(pts
@@ -3866,7 +4056,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Seeed Studio:XIAO-ESP32-C6-DIP"
+		(property "Footprint" "Seeed Studio:XIAO-ESP32-C6-SMD"
 			(at 86.36 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -3975,84 +4165,6 @@
 			(project "Thermostat"
 				(path "/7c7073d9-aa71-4fa3-824c-b9d11f714908"
 					(reference "U3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:-BATT")
-		(at 97.79 102.87 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "70692152-3394-4bc2-a4ae-bf1ad95ce9e5")
-		(property "Reference" "#PWR02"
-			(at 97.79 99.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "-BATT"
-			(at 97.79 107.95 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 97.79 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 97.79 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"-BATT\""
-			(at 97.79 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "9ac86a30-6793-4bf9-929c-d77a61e70001")
-		)
-		(instances
-			(project "Thermostat"
-				(path "/7c7073d9-aa71-4fa3-824c-b9d11f714908"
-					(reference "#PWR02")
 					(unit 1)
 				)
 			)
@@ -4217,6 +4329,167 @@
 			(project "Thermostat"
 				(path "/7c7073d9-aa71-4fa3-824c-b9d11f714908"
 					(reference "#PWR08")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:-BATT")
+		(at 97.79 113.03 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a4db8f38-bd35-4595-9072-fb9e947663c9")
+		(property "Reference" "#PWR011"
+			(at 93.98 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "-BATT"
+			(at 101.6 113.0299 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 97.79 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 97.79 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"-BATT\""
+			(at 97.79 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6fafc0a2-9f67-44a1-9643-511806dc7b42")
+		)
+		(instances
+			(project "Thermostat"
+				(path "/7c7073d9-aa71-4fa3-824c-b9d11f714908"
+					(reference "#PWR011")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 96.52 118.11 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ab1949e7-45fc-4d9e-8ef2-06e548c7d2c9")
+		(property "Reference" "J2"
+			(at 99.06 116.8399 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x02"
+			(at 99.06 119.3799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_Wire:SolderWire-1.5sqmm_1x02_P6mm_D1.7mm_OD3mm_Relief2x"
+			(at 96.52 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 96.52 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 96.52 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "52cd5615-1205-433d-9394-c5057e073734")
+		)
+		(pin "1"
+			(uuid "87c6d984-0cc5-4b3a-8f2c-69ea4976af83")
+		)
+		(instances
+			(project "Thermostat"
+				(path "/7c7073d9-aa71-4fa3-824c-b9d11f714908"
+					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -4459,7 +4732,7 @@
 	)
 	(symbol
 		(lib_id "power:+BATT")
-		(at 92.71 102.87 180)
+		(at 92.71 113.03 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4468,9 +4741,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "ebdf47f8-07ee-4c0f-95f1-bef1cf70be3c")
-		(property "Reference" "#PWR01"
-			(at 92.71 99.06 0)
+		(uuid "ff7eda92-6527-46d6-97af-546c8a55a9ec")
+		(property "Reference" "#PWR010"
+			(at 96.52 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4481,7 +4754,7 @@
 			)
 		)
 		(property "Value" "+BATT"
-			(at 92.71 107.95 0)
+			(at 91.44 110.49 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4491,7 +4764,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 92.71 102.87 0)
+			(at 92.71 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4502,7 +4775,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 92.71 102.87 0)
+			(at 92.71 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4513,7 +4786,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+BATT\""
-			(at 92.71 102.87 0)
+			(at 92.71 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4524,12 +4797,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "52a7f7e6-d220-43a2-a804-78d7fb125799")
+			(uuid "af9339a0-f52a-43f7-8514-97cd102c8fc9")
 		)
 		(instances
 			(project "Thermostat"
 				(path "/7c7073d9-aa71-4fa3-824c-b9d11f714908"
-					(reference "#PWR01")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
