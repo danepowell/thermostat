@@ -2741,7 +2741,7 @@
 		(at 97.79 113.03)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "93e8e1cc-2604-4606-8d17-e582a3e115a2")
+		(uuid "47fe4d8d-4e56-4438-bb4c-4ae7306a2839")
 	)
 	(junction
 		(at 92.71 113.03)
@@ -2999,7 +2999,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9a286763-f2e6-4955-9111-e16c1cd7cd3d")
+		(uuid "a2b9d1bb-f2d1-466f-8aeb-da2d88a20dc7")
 	)
 	(wire
 		(pts
@@ -3220,6 +3220,16 @@
 			(justify left bottom)
 		)
 		(uuid "cb8f51a6-bfc7-49d9-b567-5905dc04dbd6")
+	)
+	(label "VSENSE"
+		(at 73.66 66.04 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d36de3d0-5e25-44c7-97ae-5e1788008ed6")
 	)
 	(label "INT"
 		(at 149.86 73.66 0)
@@ -4415,7 +4425,8 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 96.52 118.11 270)
+		(at 93.98 118.11 90)
+		(mirror x)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4423,10 +4434,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "ab1949e7-45fc-4d9e-8ef2-06e548c7d2c9")
 		(property "Reference" "J2"
-			(at 99.06 116.8399 90)
+			(at 91.44 116.8399 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4437,7 +4447,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02"
-			(at 99.06 119.3799 90)
+			(at 91.44 119.3799 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4447,8 +4457,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_Wire:SolderWire-1.5sqmm_1x02_P6mm_D1.7mm_OD3mm_Relief2x"
-			(at 96.52 118.11 0)
+		(property "Footprint" "Connector_Wire:SolderWire-0.25sqmm_1x02_P4.2mm_D0.65mm_OD1.7mm_Relief"
+			(at 93.98 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4459,7 +4469,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 96.52 118.11 0)
+			(at 93.98 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4470,7 +4480,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 96.52 118.11 0)
+			(at 93.98 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
