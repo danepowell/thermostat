@@ -80,7 +80,11 @@ image:
     type: BINARY
     file: "mdi:battery-30"
     id: "battery_low"
-        
+  - platform: file
+    type: BINARY
+    file: "mdi:battery-off"
+    id: "battery_none"
+
 font:
   - file: "gfonts://Roboto"
     id: font_lg
@@ -100,7 +104,7 @@ external_components:
       url: https://github.com/danepowell/esphome
       ref: 14163ecde1aa4aa902bdaf3e60f4bb7eb6864ae1
     components: [ epaper_spi ]
-    
+
 # Use local variables so +/- feels responsive.
 globals:
   - id: target_temp_local
@@ -180,8 +184,16 @@ sensor:
     on_value_range:
       - below: 25.1
         then:
-          - logger.log: "Battery critical, entering deep sleep."
-          - deep_sleep.enter: battery_saver_sleep
+          # A near-zero voltage means no battery is attached (divider pulled to
+          # ground) and we're running on USB, so don't sleep.
+          - if:
+              condition:
+                lambda: 'return id(battery_voltage).state > 2.5;'
+              then:
+                - logger.log: "Battery critical, entering deep sleep."
+                - deep_sleep.enter: battery_saver_sleep
+              else:
+                - logger.log: "No battery detected, staying awake on USB power."
 
 text_sensor:
   - platform: homeassistant
@@ -297,8 +309,12 @@ display:
       // Header
       it.printf(8, 6, id(font_md), Color::BLACK, "Office Heat Pump");
       const float batt = id(battery_percent).state;
+      const float batt_v = id(battery_voltage).state;
       auto batt_icon = id(battery_low);
-      if (!isnan(batt)) {
+      // A near-zero voltage means no battery is attached (divider pulled to ground).
+      if (!isnan(batt_v) && batt_v <= 2.5f) {
+        batt_icon = id(battery_none);
+      } else if (!isnan(batt)) {
         if (batt > 90.0f) batt_icon = id(battery_high);
         else if (batt > 50.0f) batt_icon = id(battery_medium);
       }
