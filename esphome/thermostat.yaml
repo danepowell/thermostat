@@ -98,8 +98,8 @@ external_components:
   - source:
       type: git
       url: https://github.com/danepowell/esphome
-      ref: 02bc7f2a02b07e2e9af7b9178b2c3152b8a031cd
-    components: [ waveshare_epaper ]
+      ref: 14163ecde1aa4aa902bdaf3e60f4bb7eb6864ae1
+    components: [ epaper_spi ]
     
 # Use local variables so +/- feels responsive.
 globals:
@@ -282,33 +282,38 @@ touchscreen:
               return;
             }
 display:
-  - platform: waveshare_epaper
+  - platform: epaper_spi
     spi_id: spi_1
-    model: 2.90inv2
+    model: WAVESHARE-2.9IN-V2
     cs_pin: GPIO20
     dc_pin: GPIO17
     id: display_waveshare_epaper_1
+    reset_pin: GPIO2
+    update_interval: never
+    rotation: 270
+    busy_pin: GPIO1
+    full_update_every: 30
     lambda: |-
       // Header
-      it.printf(8, 6, id(font_md), "Office Heat Pump");
+      it.printf(8, 6, id(font_md), Color::BLACK, "Office Heat Pump");
       const float batt = id(battery_percent).state;
       auto batt_icon = id(battery_low);
       if (!isnan(batt)) {
         if (batt > 90.0f) batt_icon = id(battery_high);
         else if (batt > 50.0f) batt_icon = id(battery_medium);
       }
-      it.image(210, 6, batt_icon);
+      it.image(210, 6, batt_icon, COLOR_OFF, COLOR_ON);
 
       // Temps
-      if (!isnan(id(current_temp_local))) it.printf(8, 34, id(font_lg), "%d°", id(current_temp_local));
-      else it.printf(8, 34, id(font_lg), "--");
+      if (!isnan(id(current_temp_local))) it.printf(8, 34, id(font_lg), Color::BLACK, "%d°", id(current_temp_local));
+      else it.printf(8, 34, id(font_lg), Color::BLACK, "--");
 
-      it.image(58, 40, id(arrow));
-      it.printf(86, 34, id(font_lg), "%d°", id(target_temp_local));
+      it.image(58, 40, id(arrow), COLOR_OFF, COLOR_ON);
+      it.printf(86, 34, id(font_lg), Color::BLACK, "%d°", id(target_temp_local));
 
       // Touch buttons for 296x128
-      it.rectangle(BTN_PLUS.x,  BTN_PLUS.y,  BTN_PLUS.w,  BTN_PLUS.h);
-      it.rectangle(BTN_MINUS.x, BTN_MINUS.y, BTN_MINUS.w, BTN_MINUS.h);
+      it.rectangle(BTN_PLUS.x,  BTN_PLUS.y,  BTN_PLUS.w,  BTN_PLUS.h, Color::BLACK);
+      it.rectangle(BTN_MINUS.x, BTN_MINUS.y, BTN_MINUS.w, BTN_MINUS.h, Color::BLACK);
 
       const bool is_off  = id(hvac_mode) == "off";
       const bool is_heat = id(hvac_mode) == "heat";
@@ -316,41 +321,36 @@ display:
       const bool is_fan  = id(hvac_mode) == "fan_only";
 
       // OFF button
-      if (is_off) it.filled_rectangle(BTN_OFF.x, BTN_OFF.y, BTN_OFF.w, BTN_OFF.h);
-      else        it.rectangle(BTN_OFF.x, BTN_OFF.y, BTN_OFF.w, BTN_OFF.h);
+      if (is_off) it.filled_rectangle(BTN_OFF.x, BTN_OFF.y, BTN_OFF.w, BTN_OFF.h, Color::BLACK);
+      else        it.rectangle(BTN_OFF.x, BTN_OFF.y, BTN_OFF.w, BTN_OFF.h, Color::BLACK);
 
       // HEAT button
-      if (is_heat) it.filled_rectangle(BTN_HEAT.x, BTN_HEAT.y, BTN_HEAT.w, BTN_HEAT.h);
-      else         it.rectangle(BTN_HEAT.x, BTN_HEAT.y, BTN_HEAT.w, BTN_HEAT.h);
+      if (is_heat) it.filled_rectangle(BTN_HEAT.x, BTN_HEAT.y, BTN_HEAT.w, BTN_HEAT.h, Color::BLACK);
+      else         it.rectangle(BTN_HEAT.x, BTN_HEAT.y, BTN_HEAT.w, BTN_HEAT.h, Color::BLACK);
 
       // COOL button
-      if (is_cool) it.filled_rectangle(BTN_COOL.x, BTN_COOL.y, BTN_COOL.w, BTN_COOL.h);
-      else         it.rectangle(BTN_COOL.x, BTN_COOL.y, BTN_COOL.w, BTN_COOL.h);
+      if (is_cool) it.filled_rectangle(BTN_COOL.x, BTN_COOL.y, BTN_COOL.w, BTN_COOL.h, Color::BLACK);
+      else         it.rectangle(BTN_COOL.x, BTN_COOL.y, BTN_COOL.w, BTN_COOL.h, Color::BLACK);
 
       // FAN button
-      if (is_fan) it.filled_rectangle(BTN_FAN.x, BTN_FAN.y, BTN_FAN.w, BTN_FAN.h);
-      else        it.rectangle(BTN_FAN.x, BTN_FAN.y, BTN_FAN.w, BTN_FAN.h);
+      if (is_fan) it.filled_rectangle(BTN_FAN.x, BTN_FAN.y, BTN_FAN.w, BTN_FAN.h, Color::BLACK);
+      else        it.rectangle(BTN_FAN.x, BTN_FAN.y, BTN_FAN.w, BTN_FAN.h, Color::BLACK);
 
       // Icons
-      it.image(BTN_PLUS.x + 18,  BTN_PLUS.y + 24, id(plus));
-      it.image(BTN_MINUS.x + 18, BTN_MINUS.y + 24, id(minus));
+      it.image(BTN_PLUS.x + 18,  BTN_PLUS.y + 24, id(plus), COLOR_OFF, COLOR_ON);
+      it.image(BTN_MINUS.x + 18, BTN_MINUS.y + 24, id(minus), COLOR_OFF, COLOR_ON);
 
-      if (is_off)  it.image(BTN_OFF.x + 16,  BTN_OFF.y + 14,  id(off),  COLOR_OFF, COLOR_ON);
-      else         it.image(BTN_OFF.x + 16,  BTN_OFF.y + 14,  id(off));
+      if (is_off)  it.image(BTN_OFF.x + 16,  BTN_OFF.y + 14,  id(off));
+      else         it.image(BTN_OFF.x + 16,  BTN_OFF.y + 14,  id(off), COLOR_OFF, COLOR_ON);
 
-      if (is_heat) it.image(BTN_HEAT.x + 16, BTN_HEAT.y + 14, id(heat), COLOR_OFF, COLOR_ON);
-      else         it.image(BTN_HEAT.x + 16, BTN_HEAT.y + 14, id(heat));
+      if (is_heat) it.image(BTN_HEAT.x + 16, BTN_HEAT.y + 14, id(heat));
+      else         it.image(BTN_HEAT.x + 16, BTN_HEAT.y + 14, id(heat), COLOR_OFF, COLOR_ON);
 
-      if (is_cool) it.image(BTN_COOL.x + 16, BTN_COOL.y + 14, id(cool), COLOR_OFF, COLOR_ON);
-      else         it.image(BTN_COOL.x + 16, BTN_COOL.y + 14, id(cool));
+      if (is_cool) it.image(BTN_COOL.x + 16, BTN_COOL.y + 14, id(cool));
+      else         it.image(BTN_COOL.x + 16, BTN_COOL.y + 14, id(cool), COLOR_OFF, COLOR_ON);
 
-      if (is_fan)  it.image(BTN_FAN.x + 16,  BTN_FAN.y + 14,  id(fan),  COLOR_OFF, COLOR_ON);
-      else         it.image(BTN_FAN.x + 16,  BTN_FAN.y + 14,  id(fan));
-
-    reset_pin: GPIO2
-    update_interval: never
-    rotation: 270
-    busy_pin: GPIO1
+      if (is_fan)  it.image(BTN_FAN.x + 16,  BTN_FAN.y + 14,  id(fan));
+      else         it.image(BTN_FAN.x + 16,  BTN_FAN.y + 14,  id(fan), COLOR_OFF, COLOR_ON);
 deep_sleep:
   id: battery_saver_sleep
   sleep_duration: 30min
