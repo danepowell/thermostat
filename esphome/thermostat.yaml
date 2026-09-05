@@ -105,7 +105,7 @@ external_components:
   - source:
       type: git
       url: https://github.com/danepowell/esphome
-      ref: d7f05a9801d8d536125cbd2572a86aaecf316916
+      ref: 1cbd2aeab411ae8bcecfd5386235272a66adf42d
     components: [ icnt86 ]
   - source:
       type: git
