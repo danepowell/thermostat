@@ -15,6 +15,10 @@ logger:
 api:
   encryption:
     key: !secret thermostat__encryption_key
+  on_client_connected:
+    - component.update: display_waveshare_epaper_1
+  on_client_disconnected:
+    - component.update: display_waveshare_epaper_1
 ota:
   - platform: esphome
 
@@ -84,6 +88,10 @@ image:
     type: BINARY
     file: "mdi:battery-off"
     id: "battery_none"
+  - platform: file
+    type: BINARY
+    file: "mdi:cloud-off-outline"
+    id: "disconnected"
 
 font:
   - file: "gfonts://Roboto"
@@ -324,6 +332,10 @@ display:
         else if (batt > 50.0f) batt_icon = id(battery_medium);
       }
       it.image(210, 6, batt_icon, COLOR_OFF, COLOR_ON);
+
+      if (!api::global_api_server->is_connected()) {
+        it.image(182, 6, id(disconnected), COLOR_OFF, COLOR_ON);
+      }
 
       // Temps
       if (!isnan(id(current_temp_local))) it.printf(8, 34, id(font_lg), Color::BLACK, "%d°", id(current_temp_local));
