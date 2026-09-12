@@ -252,7 +252,7 @@
 		(at 71.5 123.9 90)
 		(descr "Soldered wire connection with feed through strain relief, for 2 times 0.25 mm² wires, basic insulation, conductor diameter 0.65mm, outer diameter 1.7mm, size source Multi-Contact FLEXI-E_0.25 (https://www.staubli.com/content/dam/ecs/catalogs-brochures/TM/CAB-Main-11014119-en.pdf#page=9), bend radius 3 times outer diameter")
 		(tags "connector wire 0.25sqmm strain-relief")
-		(property "Reference" "+"
+		(property "Reference" "J2"
 			(at -2.3 0 90)
 			(layer "F.SilkS")
 			(uuid "0c503b30-ac7b-4807-9935-a789d7ece8c3")
