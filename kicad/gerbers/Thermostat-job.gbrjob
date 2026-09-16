@@ -1,0 +1,157 @@
+{
+  "Header": {
+    "GenerationSoftware": {
+      "Vendor": "KiCad",
+      "Application": "Pcbnew",
+      "Version": "10.0.6-10.0.6~ubuntu24.04.1"
+    },
+    "CreationDate": "2026-09-16T15:22:38-07:00"
+  },
+  "GeneralSpecs": {
+    "ProjectId": {
+      "Name": "Thermostat",
+      "GUID": "54686572-6d6f-4737-9461-742e6b696361",
+      "Revision": "rev?"
+    },
+    "Size": {
+      "X": 82.05,
+      "Y": 46.05
+    },
+    "LayerNumber": 4,
+    "BoardThickness": 1.6002,
+    "Finish": "None"
+  },
+  "DesignRules": [
+    {
+      "Layers": "Outer",
+      "PadToPad": 0.127,
+      "PadToTrack": 0.127,
+      "TrackToTrack": 0.127,
+      "MinLineWidth": 0.127,
+      "TrackToRegion": 0.5,
+      "RegionToRegion": 0.5
+    },
+    {
+      "Layers": "Inner",
+      "PadToPad": 0.127,
+      "PadToTrack": 0.127,
+      "TrackToTrack": 0.127
+    }
+  ],
+  "FilesAttributes": [
+    {
+      "Path": "Thermostat-Front.gtl",
+      "FileFunction": "Copper,L1,Top",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "Thermostat-Back.gbl",
+      "FileFunction": "Copper,L4,Bot",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "Thermostat-F_Paste.gtp",
+      "FileFunction": "SolderPaste,Top",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "Thermostat-B_Paste.gbp",
+      "FileFunction": "SolderPaste,Bot",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "Thermostat-F_Silkscreen.gto",
+      "FileFunction": "Legend,Top",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "Thermostat-B_Silkscreen.gbo",
+      "FileFunction": "Legend,Bot",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "Thermostat-F_Mask.gts",
+      "FileFunction": "SolderMask,Top",
+      "FilePolarity": "Negative"
+    },
+    {
+      "Path": "Thermostat-B_Mask.gbs",
+      "FileFunction": "SolderMask,Bot",
+      "FilePolarity": "Negative"
+    },
+    {
+      "Path": "Thermostat-Edge_Cuts.gm1",
+      "FileFunction": "Profile",
+      "FilePolarity": "Positive"
+    }
+  ],
+  "MaterialStackup": [
+    {
+      "Type": "Legend",
+      "Name": "Top Silk Screen"
+    },
+    {
+      "Type": "SolderPaste",
+      "Name": "Top Solder Paste"
+    },
+    {
+      "Type": "SolderMask",
+      "Thickness": 0.01,
+      "Name": "Top Solder Mask"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.035,
+      "Name": "Front"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.4801,
+      "Material": "FR4",
+      "Name": "Front/In1.Cu",
+      "Notes": "Type: dielectric layer 1 (from Front to In1.Cu)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.035,
+      "Name": "In1.Cu"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.4801,
+      "Material": "FR4",
+      "Name": "In1.Cu/In2.Cu",
+      "Notes": "Type: dielectric layer 2 (from In1.Cu to In2.Cu)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.035,
+      "Name": "In2.Cu"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.4801,
+      "Material": "FR4",
+      "Name": "In2.Cu/Back",
+      "Notes": "Type: dielectric layer 3 (from In2.Cu to Back)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.035,
+      "Name": "Back"
+    },
+    {
+      "Type": "SolderMask",
+      "Thickness": 0.01,
+      "Name": "Bottom Solder Mask"
+    },
+    {
+      "Type": "SolderPaste",
+      "Name": "Bottom Solder Paste"
+    },
+    {
+      "Type": "Legend",
+      "Name": "Bottom Silk Screen"
+    }
+  ]
+}
