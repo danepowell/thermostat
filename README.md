@@ -13,6 +13,9 @@ This is an ESPHome touch e-paper thermostat based on the following hardare:
 - [Pololu U1V11F5 5V regulator](https://www.pololu.com/product/2562)
 - 240 mAh 1S LiPo battery
 
+> [!NOTE]
+> This is a work in progress and still in a pre-protoype phase. Use at your own risk.
+
 Depends on:
 
 - https://github.com/danepowell/kicad-pololu/
