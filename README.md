@@ -6,7 +6,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
 # ESPHome E-Paper Thermostat
 
-This is an ESPHome touch e-paper thermostat based on the following hardare:
+This is an ESPHome touch e-paper thermostat based on the following hardware:
 
 - [XIAO ESP32C6](https://wiki.seeedstudio.com/xiao_esp32c6_getting_started/)
 - [Waveshare 2.9in E-Paper Touch HAT](https://www.waveshare.com/2.9inch-Touch-e-Paper-HAT.htm)
@@ -20,7 +20,23 @@ Depends on:
 
 - https://github.com/danepowell/kicad-pololu/
 
-Still in progress:
+## Case
+
+Copy my design in OnShape: https://cad.onshape.com/documents/da84725b03bf912abcd9079c/w/40e4bec9f83454897f6fe609/e/7877d9c784235c98f72ce537?renderMode=0&uiState=6af4c48c539eb27832d8ffcd
+
+A 3mf export (suitable for printing in Bambu Studio) is also available in the `case` directory.
+
+## ESPHome
+
+The `esphome` directory contains the software which you can flash to the XIAO ESP32C6.
+
+## KiCad
+
+The `kicad` directory contains the KiCad PCB and schematic which you can use to manufacture your own board.
+
+The assembly should be straightforward and self-explanatory with the exception of the battery terminals on the ESP32. Since these are on the rear of the chip, they must be flush-soldered to the PCB. The best technique I've found is to apply a tiny amount of solder paste to the battery terminals, clamp the ESP32 to the PCB, then apply heat and solder from the back through the corresponding vias.
+
+## Still in progress
 
 - Improve battery life (currently only ~5 hours)
 - Add a temperature sensor (currently this is more of a remote control than a thermostat, strictly speaking)

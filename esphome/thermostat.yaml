@@ -101,18 +101,6 @@ font:
     id: font_md
     size: 22
 
-external_components:
-  - source:
-      type: git
-      url: https://github.com/danepowell/esphome
-      ref: 1cbd2aeab411ae8bcecfd5386235272a66adf42d
-    components: [ icnt86 ]
-  - source:
-      type: git
-      url: https://github.com/danepowell/esphome
-      ref: 14163ecde1aa4aa902bdaf3e60f4bb7eb6864ae1
-    components: [ epaper_spi ]
-
 # Use local variables so +/- feels responsive.
 globals:
   - id: target_temp_local
