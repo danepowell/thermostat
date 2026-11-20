@@ -6,6 +6,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
 # ESPHome E-Paper Thermostat
 
+![Thermostat](perspective.jpg)
+
 This is an ESPHome touch e-paper thermostat based on the following hardware:
 
 - [XIAO ESP32C6](https://wiki.seeedstudio.com/xiao_esp32c6_getting_started/)
@@ -13,14 +15,20 @@ This is an ESPHome touch e-paper thermostat based on the following hardware:
 - [Pololu U1V11F5 5V regulator](https://www.pololu.com/product/2562)
 - 240 mAh 1S LiPo battery
 
-> [!NOTE]
-> This is a work in progress and still in a pre-protoype phase. Use at your own risk.
-
 Depends on:
 
 - https://github.com/danepowell/kicad-pololu/
 
+## Project status
+
+> [!NOTE]
+> This is a work in progress and still in a protoype phase. Use at your own risk.
+
+The current version is as shown in the photos. The case, PCB, battery, and screen can all be assembled and are fully functional. The main area needing improvement is battery life (currently about 5 hours). See [Todo](#todo) for details.
+
 ## Case
+
+![Thermostat](hand.jpg)
 
 Copy my design in OnShape: https://cad.onshape.com/documents/da84725b03bf912abcd9079c/w/40e4bec9f83454897f6fe609/e/7877d9c784235c98f72ce537?renderMode=0&uiState=6af4c48c539eb27832d8ffcd
 
@@ -36,9 +44,10 @@ The `kicad` directory contains the KiCad PCB and schematic which you can use to 
 
 The assembly should be straightforward and self-explanatory with the exception of the battery terminals on the ESP32. Since these are on the rear of the chip, they must be flush-soldered to the PCB. The best technique I've found is to apply a tiny amount of solder paste to the battery terminals, clamp the ESP32 to the PCB, then apply heat and solder from the back through the corresponding vias.
 
-## Still in progress
+## Todo
 
-- Improve battery life (currently only ~5 hours)
+- Improve battery life
+- Add system for wall mounting
 - Add a temperature sensor (currently this is more of a remote control than a thermostat, strictly speaking)
 
 The challenge with battery life is the touch sensor and wifi. While the E-Paper display and ESP32 can theoretically go into a deep sleep and consume only a few microamps, this presents two problems:
